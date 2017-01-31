@@ -1,0 +1,8 @@
+[local]
+localhost
+
+[apacheweb]
+jaepyoung2.mylabserver.com
+
+[appserver]
+jaepyoung3.mylabserver.com

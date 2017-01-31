@@ -1,0 +1,27 @@
+ansible all --list-hosts
+
+ansible apacheweb -m ping  ==> ping to apacheweb group
+ansible tcox -i hosts -m ping ==> overwrite the host config with current directory hosts file
+export ANSIBLE_CONFIG=/home/test/test/config/ansible.cfg
+ansible apacheweb -m ping 
+
+Ansible cfg priorityies 
+
+ANSIBLE_CONFIG (an environment variable)
+ansible.cfg 
+.ansible.cfg
+/etc/ansible/ansible.cfg
+
+ansible apacheweb -s -m shell -a 'yum list installed|grep python'
+ansible all -m seutup ==> shows all info
+ansible all -m setup --tree /tmp/facts
+ansible appserver -m setup -a 'filter=ansible_ip*'
+ansible appserver -m setup -a 'filter=*ip4*'
+
+ansible apacheweb -m setup -a 'filter=ansible_domain'
+ansible apacheweb -m setup -a 'filter=ansible_fqdn'
+ansible apacheweb -m setup -a 'filter=ansible_interfaces'
+ansible apacheweb -m setup -a 'filter=ansible_kernel'
+ansible apacheweb -m setup -a 'filter=ansible_memtotal_mb'
+ansible apacheweb -m setup -a 'filter=ansible_proc*'
+
