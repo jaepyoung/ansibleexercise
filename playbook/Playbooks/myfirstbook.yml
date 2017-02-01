@@ -16,6 +16,8 @@
   tasks:  
     - name: Install Apache Web Browser
       action: yum name=httpd state=installed
+      async: 300
+      pull: 3  
       notify: Restart HTTPD
 
   handlers:

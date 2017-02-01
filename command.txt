@@ -27,3 +27,7 @@ ansible apacheweb -m setup -a 'filter=ansible_proc*'
 
 state=absent ==> Just let us know the if absent. 
 
+ansible-playbook webserver.yml --check
+async: timeoute time
+pull : how often 
+
