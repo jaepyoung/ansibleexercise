@@ -25,3 +25,5 @@ ansible apacheweb -m setup -a 'filter=ansible_kernel'
 ansible apacheweb -m setup -a 'filter=ansible_memtotal_mb'
 ansible apacheweb -m setup -a 'filter=ansible_proc*'
 
+state=absent ==> Just let us know the if absent. 
+
