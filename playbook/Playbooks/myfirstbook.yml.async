@@ -10,16 +10,15 @@
     - conf/copyright.yml
     - conf/webdefaults.yml   
   vars_prompt:
-    - name: pkg_name 
-      prompt: Install Which Package?  
+    - name: web_domain
+      prompt: Web Domain
 
   tasks:  
     - name: Install Apache Web Browser
       action: yum name=httpd state=installed
       async: 300
+      pull: 3  
       notify: Restart HTTPD
-    - name: Install the Lynx Web Browser
-      action: yum name={{ pkg_name }} state=installed   
 
   handlers:
     - name: Restart HTTPD 

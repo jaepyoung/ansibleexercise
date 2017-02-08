@@ -6,12 +6,11 @@
   gather_facts: no
   vars: 
     playbook_version: 0.1g 
-  vars_files: 
-    - conf/copyright.yml
-    - conf/webdefaults.yml   
   vars_prompt:
-    - name: pkg_name 
+    - name: pkgtoinstall 
       prompt: Install Which Package?  
+      default: telnet         
+      private: no
 
   tasks:  
     - name: Install Apache Web Browser
@@ -19,7 +18,7 @@
       async: 300
       notify: Restart HTTPD
     - name: Install the Lynx Web Browser
-      action: yum name={{ pkg_name }} state=installed   
+      action: yum name={{ pkgtoinstall }} state=installed   
 
   handlers:
     - name: Restart HTTPD 

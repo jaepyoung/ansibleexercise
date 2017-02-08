@@ -31,3 +31,14 @@ ansible-playbook webserver.yml --check
 async: timeoute time
 pull : how often 
 
+
+ansible apacheweb -m setup -a 'filter=ansible_os_family' ==> Show the apacheweb servers os family
+ansible-vault create secure.yml ==> create encrypted file
+
+ansible-vault edit secure.yml ==> edit file
+ansible-valut rekey secure.yml ==> Change the password
+ansible-vault decrypt secure.yml ==> Decrypt the file
+ansible-vault encrypt  accounts.yml
+
+ansible-playbook waitfor.yml --vault-password-file somefile.txt
+ansible-playbook tags.yml --tags "verification" ==> only executes this tool
