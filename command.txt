@@ -42,3 +42,11 @@ ansible-vault encrypt  accounts.yml
 
 ansible-playbook waitfor.yml --vault-password-file somefile.txt
 ansible-playbook tags.yml --tags "verification" ==> only executes this tool
+
+ansible-playbook startat.yml --start-at-task='Install Lynx'
+ansible-playbook startat.yml --step
+
+ansible-playbook fromcmdline.yml --extra-vars "hosts=apacheweb user=test pkg=telnet"
+
+Roles: 
+ansible-playbook websevers.yml 
