@@ -1,0 +1,15 @@
+- name: Install Red Hat/CentOs Apache Web Server
+  yum: pkg={{ redhat_apache}} state=latest
+  when: "ansible_os_family == 'RedHat' "
+  notify: Restart HTTPD
+  ignore_errors: yes
+
+- name: Install (Debina/Ubuntu) Apache Web Server
+  apt: pkg={{ debian_apache }}  state=latest
+  when: "ansible_os_family == 'Debian' "
+  notify: Restart HTTPD
+  ignore_errors: yes
+
+- debug: Need to install telnet
+  when: "ansible_os_family == 'RedHat'"
+  notify: InstallTelnet
