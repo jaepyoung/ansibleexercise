@@ -50,3 +50,6 @@ ansible-playbook fromcmdline.yml --extra-vars "hosts=apacheweb user=test pkg=tel
 
 Roles: 
 ansible-playbook websevers.yml 
+
+ansible-playbook dynamic.yml --extra-vars "hosts=apacheweb"
+ansible-playbook dynamic.yml --extra-vars "hosts=apacheweb user=test role=redhat_webservers"
